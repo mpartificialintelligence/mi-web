@@ -8,7 +8,7 @@ const cases = [
     challenge:
       "El cliente enfrentaba un lento Time-to-Market (estimado en 10 meses) y una alta deuda técnica en su plataforma heredada de procesamiento de pagos.",
     solution:
-      "Implementamos Genesis Engine bajo el marco APEX. Utilizamos Vibe Prototyping y Spec-Driven Development para generar código de alta gobernanza.",
+      "Implementamos Genesis Engine bajo nuestro marco de aceleración. Utilizamos Vibe Prototyping y Spec-Driven Development para generar código de alta gobernanza.",
     results: [
       { metric: "10→3", label: "Meses Time-to-Market", color: "#14b8a6" },
       { metric: "+45%", label: "Productividad incrementada", color: "#06b6d4" },
@@ -25,7 +25,7 @@ const cases = [
     challenge:
       "Sistema legado COBOL de 30 años impedía la innovación. Mantenimiento costoso consumía el 60% del presupuesto tecnológico anual.",
     solution:
-      "Aplicamos Shift-Right con Refactorización Agéntica bajo el Patrón Estrangulador, preservando la lógica de negocio crítica con 87% de precisión.",
+      "Aplicamos Shift-Right con Refactorización Agéntica y el Patrón Estrangulador, preservando la lógica de negocio crítica con 87% de precisión.",
     results: [
       { metric: "80%", label: "Automatización en modernización", color: "#14b8a6" },
       { metric: "60%↓", label: "Reducción costos de mantenimiento", color: "#06b6d4" },
@@ -40,7 +40,7 @@ const cases = [
 
 const templateSteps = [
   { label: "El Desafío (SDLC 1.0)", desc: "Lento Time-to-Market y alta deuda técnica", icon: "🔴" },
-  { label: "La Solución APEX (SDLC 2.0)", desc: "Genesis Engine + Vibe Prototyping + SDD", icon: "🟡" },
+  { label: "La Solución de Ingeniería Aumentada (SDLC 2.0)", desc: "Genesis Engine + Vibe Prototyping + SDD", icon: "🟡" },
   { label: "Resultados Cuantitativos", desc: "Métricas de aceleración medibles y auditables", icon: "🟢" },
   { label: "Testimonio Clave", desc: "Valor entregado desde la perspectiva del cliente", icon: "⭐" },
 ];
@@ -70,7 +70,7 @@ export default function CaseStudies() {
             style={{
               fontFamily: "'Syne', sans-serif",
               fontWeight: 800,
-              fontSize: "clamp(2rem, 4vw, 3.5rem)",
+              fontSize: "clamp(1.75rem, 2.5vw, 2.6rem)",
               color: "var(--text-primary)",
             }}
           >
@@ -78,7 +78,7 @@ export default function CaseStudies() {
             <span className="gradient-text">Hablan por Sí Solos</span>
           </h2>
           <p className="text-lg leading-relaxed" style={{ color: "var(--text-muted)" }}>
-            Métricas reales de aceleración en proyectos reales bajo el marco APEX.
+            Métricas reales de aceleración en proyectos reales bajo nuestra metodología de entrega.
           </p>
         </div>
 
@@ -88,13 +88,13 @@ export default function CaseStudies() {
             <div key={idx} className="glass-card overflow-hidden">
               <div className="grid lg:grid-cols-5 gap-0">
                 {/* Image side */}
-                <div className="lg:col-span-2 relative min-h-[250px]">
+                <div className="lg:col-span-2 relative min-h-[280px] lg:min-h-full">
                   <Image
                     src={c.image}
                     alt={c.title}
                     fill
                     className="object-cover object-center"
-                    style={{ filter: "brightness(0.35) contrast(1.1)" }}
+                    style={{ filter: "brightness(0.6) contrast(1.05)" }}
                   />
                   <div
                     className="absolute inset-0 flex flex-col justify-end p-6"
@@ -139,7 +139,7 @@ export default function CaseStudies() {
                         className="text-xs font-semibold uppercase tracking-widest mb-2"
                         style={{ color: "var(--accent-teal)" }}
                       >
-                        La Solución APEX
+                        La Solución de Ingeniería Aumentada
                       </div>
                       <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
                         {c.solution}
@@ -207,7 +207,7 @@ export default function CaseStudies() {
           style={{ borderColor: "rgba(20, 184, 166, 0.2)" }}
         >
           <div className="text-center mb-8">
-            <div className="badge mb-3 mx-auto">Plantilla APEX</div>
+            <div className="badge mb-3 mx-auto">Plantilla de Caso de Éxito</div>
             <h3
               className="text-xl font-bold"
               style={{ fontFamily: "'Syne', sans-serif", color: "var(--text-primary)" }}

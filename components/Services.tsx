@@ -7,7 +7,7 @@ const services = [
     subtitle: "Desarrollo de MVPs",
     tag: "3× Aceleración",
     tagColor: "#14b8a6",
-    uvp: "Entrega de prototipos funcionales en 48 horas y MVPs en 2 a 4 meses. Arquitecturas Next.js, Flutter, FastAPI.",
+    uvp: "Entrega de prototipos funcionales en 48 horas y MVPs en 2 a 4 meses.",
     ai: "AI-First Discovery: Agentes de NLP detectan inconsistencias en requisitos. Spec-Driven Development: Generación de código basado en especificación validada.",
     pricing: "Outcome-Based: Precio fijo por hito funcional validado (ej. «Módulo de pagos funcional»).",
     icon: "🚀",
@@ -28,7 +28,7 @@ const services = [
     tag: "99.9% Uptime",
     tagColor: "#34d399",
     uvp: "Máxima Resiliencia: Garantía de continuidad mediante la reducción del MTTR hasta en un 90%. Uptime garantizado del 99.9%.",
-    ai: "Detección de Anomalías: Agentes monitorean telemetría 24/7. Remediación Autónoma bajo guardrail (rollback de despliegues).",
+    ai: "Remediación Autónoma: Ejecución de correcciones bajo guardrail (ej. rollback de despliegues). Investigación Paralela: Agentes identifican la causa raíz en segundos.",
     pricing: "Híbrido: Suscripción base + tarifa por incidente resuelto exitosamente.",
     icon: "🛡️",
   },
@@ -37,36 +37,13 @@ const services = [
     subtitle: "Aseguramiento de Calidad 2.0",
     tag: "+80% Cobertura",
     tagColor: "#a78bfa",
-    uvp: "Calidad a la Izquierda: Cobertura de pruebas superior al 80% sin exposición de datos sensibles.",
-    ai: "Generación Agéntica de Pruebas: Suites Playwright/Cypress automáticas. Datos Sintéticos: Pruebas masivas GDPR/HIPAA compliant.",
+    uvp: "Calidad a la Izquierda: Cobertura de pruebas superior al 80% sin exposición de datos sensibles (GDPR/HIPAA).",
+    ai: "Generación Agéntica de Pruebas: Creación automática de suites Playwright/Cypress. Datos Sintéticos: Pruebas masivas que cumplen normativas de privacidad.",
     pricing: "Outcome-Based: Tarifa por «Suite de Pruebas Verificada» o «Release Auditado».",
     icon: "✅",
   },
 ];
 
-const products = [
-  {
-    name: "Doc-Intelligence Fabric",
-    desc: "Agente para la extracción y validación de datos de documentos no estructurados. Ideal para sectores legal y financiero.",
-    pricing: "$0.50 – $2.00 por documento procesado",
-    model: "Outcome-Based",
-    icon: "📄",
-  },
-  {
-    name: "Concierge Agent",
-    desc: "Agente de soporte autónomo que resuelve entre el 70–90% de los casos de soporte de extremo a extremo sin intervención humana.",
-    pricing: "$0.99 por resolución exitosa",
-    model: "Outcome-Based",
-    icon: "🤖",
-  },
-  {
-    name: "Code Auditor Pro",
-    desc: "Middleware de gobernanza para auditar código generado por IA externa, garantizando seguridad y cumplimiento normativo.",
-    pricing: "Suscripción por repositorio/mes",
-    model: "SaaS",
-    icon: "🔍",
-  },
-];
 
 export default function Services() {
   return (
@@ -88,12 +65,11 @@ export default function Services() {
             style={{
               fontFamily: "'Syne', sans-serif",
               fontWeight: 800,
-              fontSize: "clamp(2rem, 4vw, 3.5rem)",
+              fontSize: "clamp(1.75rem, 2.5vw, 2.6rem)",
               color: "var(--text-primary)",
             }}
           >
-            Ingeniería Aumentada por{" "}
-            <span className="gradient-text">Inteligencia Artificial</span>
+            Nuestros{" "}<span className="gradient-text">Servicios</span>
           </h2>
           <p className="text-lg leading-relaxed" style={{ color: "var(--text-muted)" }}>
             Cuatro pilares de servicio diseñados para acelerar cada etapa de su ciclo de
@@ -192,51 +168,6 @@ export default function Services() {
           ))}
         </div>
 
-        {/* Packaged products */}
-        <div>
-          <div className="flex items-center gap-4 mb-8">
-            <h3
-              className="text-2xl font-bold"
-              style={{ fontFamily: "'Syne', sans-serif", color: "var(--text-primary)" }}
-            >
-              Productos Empaquetados
-            </h3>
-            <div
-              className="h-px flex-1"
-              style={{ background: "linear-gradient(to right, rgba(20,184,166,0.3), transparent)" }}
-            />
-            <span className="badge">Digital Workers</span>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-5">
-            {products.map((p) => (
-              <div
-                key={p.name}
-                className="glass-card glass-card-hover p-6 flex flex-col gap-4"
-              >
-                <div className="text-3xl">{p.icon}</div>
-                <h4
-                  className="text-lg font-bold"
-                  style={{ fontFamily: "'Syne', sans-serif", color: "var(--text-primary)" }}
-                >
-                  {p.name}
-                </h4>
-                <p className="text-sm leading-relaxed flex-1" style={{ color: "var(--text-muted)" }}>
-                  {p.desc}
-                </p>
-                <div style={{ borderTop: "1px solid rgba(20,184,166,0.1)", paddingTop: "12px" }}>
-                  <div className="text-xs font-semibold mb-1" style={{ color: "var(--accent-teal)" }}>
-                    {p.model}
-                  </div>
-                  <div className="text-sm font-medium" style={{ color: "var(--text-primary)" }}>
-                    {p.pricing}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* Image banner */}
         <div className="mt-20 relative rounded-2xl overflow-hidden" style={{ height: "300px" }}>
           <Image
@@ -244,7 +175,7 @@ export default function Services() {
             alt="AI Engineering Stack"
             fill
             className="object-cover object-center"
-            style={{ filter: "brightness(0.4) contrast(1.1)" }}
+            style={{ filter: "brightness(0.25) contrast(1.1)" }}
           />
           <div
             className="absolute inset-0 flex flex-col justify-center items-center text-center px-6"

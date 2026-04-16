@@ -8,9 +8,9 @@ const navLinks = [
   { label: "Inicio", href: "#home" },
   { label: "Nosotros", href: "#about" },
   { label: "Servicios", href: "#services" },
-  { label: "Metodología", href: "#methodology" },
   { label: "Precios", href: "#pricing" },
   { label: "Casos de Éxito", href: "#cases" },
+  { label: "Contacto", href: "#contact" },
 ];
 
 export default function Navigation() {
@@ -74,8 +74,8 @@ export default function Navigation() {
 
         {/* CTA */}
         <div className="hidden lg:block">
-          <a href="#methodology" className="btn-primary text-sm py-2.5 px-5">
-            Marco APEX
+          <a href="#services" className="btn-primary text-sm py-2.5 px-5">
+            Ver Servicios
           </a>
         </div>
 
@@ -130,8 +130,8 @@ export default function Navigation() {
               {link.label}
             </a>
           ))}
-          <a href="#methodology" className="btn-primary text-sm mt-2 justify-center">
-            Marco APEX
+          <a href="#services" className="btn-primary text-sm mt-2 justify-center">
+            Ver Servicios
           </a>
         </div>
       )}
