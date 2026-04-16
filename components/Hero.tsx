@@ -130,14 +130,13 @@ export default function Hero() {
             style={{
               fontFamily: "'Syne', sans-serif",
               fontWeight: 800,
-              fontSize: "clamp(2.5rem, 6vw, 5rem)",
+              fontSize: "clamp(2.2rem, 4.5vw, 4rem)",
             }}
           >
-            <span style={{ color: "var(--text-primary)" }}>Ingeniería de Software </span>
+            <span style={{ color: "var(--text-primary)" }}>Ingeniería de Software</span>
+            <br />
             <span className="gradient-text">Aumentada por IA</span>
-            <span style={{ color: "var(--text-muted)", fontSize: "0.9em" }}>
-              {" "}(AIFSD).
-            </span>
+            <span style={{ color: "var(--text-muted)", fontSize: "0.65em", fontWeight: 600 }}>{" "}(AIFSD)</span>
           </h1>
 
           {/* Subtitle */}
@@ -189,8 +188,8 @@ export default function Hero() {
 
           {/* CTAs */}
           <div className="flex flex-wrap gap-4">
-            <a href="#methodology" className="btn-primary">
-              Calcule su Aceleración
+            <a href="#services" className="btn-primary">
+              Vea nuestra Metodología de Entrega
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>

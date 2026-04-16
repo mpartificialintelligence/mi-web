@@ -5,9 +5,9 @@ const navLinks = [
   { label: "Inicio", href: "#home" },
   { label: "Nosotros", href: "#about" },
   { label: "Servicios", href: "#services" },
-  { label: "Metodología", href: "#methodology" },
   { label: "Precios", href: "#pricing" },
   { label: "Casos de Éxito", href: "#cases" },
+  { label: "Contacto", href: "#contact" },
 ];
 
 const services = [
@@ -141,11 +141,11 @@ export default function Footer() {
               ¿Listo para acelerar su negocio?
             </div>
             <div className="text-sm" style={{ color: "var(--text-muted)" }}>
-              Calcule su aceleración con el Marco APEX
+              Descubra cómo podemos acelerar su negocio
             </div>
           </div>
-          <a href="#methodology" className="btn-primary whitespace-nowrap">
-            Vea el Marco APEX
+          <a href="#contact" className="btn-primary whitespace-nowrap">
+            Contáctenos
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
