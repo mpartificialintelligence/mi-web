@@ -97,21 +97,22 @@ export default function Hero() {
           <div>
             <div className="badge mb-8">
               <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse-slow" />
-              AI-First Software Engineering
+              Ingeniería de Software Agéntica
             </div>
 
             <h1
               className="mb-6 leading-[1.1] tracking-tight"
               style={{
-                fontFamily: "'Syne', sans-serif",
+                fontFamily: "var(--font-syne), sans-serif",
                 fontWeight: 800,
-                fontSize: "clamp(2.4rem, 4vw, 3.6rem)",
+                fontSize: "clamp(2rem, 4vw, 3.6rem)",
+                wordBreak: "break-word",
+                overflowWrap: "anywhere",
               }}
             >
               <span style={{ color: "var(--text-primary)" }}>Ingeniería de Software</span>
               <br />
               <span className="gradient-text">Aumentada por IA</span>
-              <span style={{ color: "var(--text-muted)", fontSize: "0.55em", fontWeight: 600 }}>{" "}(AIFSD)</span>
             </h1>
 
             <p
@@ -119,7 +120,7 @@ export default function Hero() {
               style={{
                 color: "var(--text-muted)",
                 fontSize: "clamp(1rem, 1.5vw, 1.15rem)",
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "var(--font-dm-sans), sans-serif",
               }}
             >
               Transformamos intenciones de negocio en sistemas funcionales en{" "}
@@ -139,7 +140,7 @@ export default function Hero() {
             >
               <p
                 className="leading-relaxed text-sm"
-                style={{ color: "var(--text-muted)", fontStyle: "italic", fontFamily: "'DM Sans', sans-serif" }}
+                style={{ color: "var(--text-muted)", fontStyle: "italic", fontFamily: "var(--font-dm-sans), sans-serif" }}
               >
                 Su próximo MVP ya no tiene que tomar 9 meses. Entregamos
                 funcionalidad validada en{" "}
@@ -151,7 +152,7 @@ export default function Hero() {
 
             <div className="flex flex-wrap gap-4">
               <a href="#services" className="btn-primary">
-                Vea nuestra Metodología
+                Ver nuestros Servicios
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
@@ -173,13 +174,32 @@ export default function Hero() {
                 <div className="metric-value" style={{ fontSize: "2.2rem" }}>{m.value}</div>
                 <div
                   className="text-sm font-medium leading-snug"
-                  style={{ color: "var(--text-muted)", fontFamily: "'DM Sans', sans-serif" }}
+                  style={{ color: "var(--text-muted)", fontFamily: "var(--font-dm-sans), sans-serif" }}
                 >
                   {m.label}
                 </div>
               </div>
             ))}
           </div>
+        </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10">
+        <span className="text-xs uppercase tracking-widest" style={{ color: "var(--text-muted)", fontFamily: "var(--font-dm-sans), sans-serif" }}>
+          Explorar
+        </span>
+        <div
+          className="w-6 h-10 rounded-full flex items-start justify-center pt-2"
+          style={{ border: "1px solid rgba(20,184,166,0.3)" }}
+        >
+          <div
+            className="w-1 h-2.5 rounded-full"
+            style={{
+              background: "var(--accent-teal)",
+              animation: "scrollDot 1.8s ease-in-out infinite",
+            }}
+          />
         </div>
       </div>
 
