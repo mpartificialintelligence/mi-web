@@ -3,10 +3,10 @@
 import { useEffect, useRef } from "react";
 
 const metrics = [
-  { value: "3×", label: "Más rápido" },
-  { value: "12→4", label: "Meses al mercado" },
-  { value: "90%", label: "Reducción MTTR" },
-  { value: "80%+", label: "Cobertura de tests" },
+  { value: "3×", label: "Más rápido al mercado", icon: "🚀" },
+  { value: "12→4", label: "Meses Time-to-Market", icon: "📅" },
+  { value: "90%", label: "Reducción de MTTR", icon: "⚡" },
+  { value: "80%+", label: "Cobertura de tests", icon: "✅" },
 ];
 
 export default function Hero() {
@@ -21,16 +21,9 @@ export default function Hero() {
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
 
-    const particles: {
-      x: number;
-      y: number;
-      vx: number;
-      vy: number;
-      r: number;
-      alpha: number;
-    }[] = [];
+    const particles: { x: number; y: number; vx: number; vy: number; r: number; alpha: number }[] = [];
 
-    for (let i = 0; i < 60; i++) {
+    for (let i = 0; i < 70; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
@@ -42,40 +35,33 @@ export default function Hero() {
     }
 
     let animId: number;
-
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-
       particles.forEach((p, i) => {
         p.x += p.vx;
         p.y += p.vy;
         if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
         if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(20, 184, 166, ${p.alpha})`;
         ctx.fill();
-
-        // Draw connections
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[j].x - p.x;
           const dy = particles[j].y - p.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 120) {
+          if (dist < 130) {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(20, 184, 166, ${0.08 * (1 - dist / 120)})`;
+            ctx.strokeStyle = `rgba(20, 184, 166, ${0.08 * (1 - dist / 130)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
         }
       });
-
       animId = requestAnimationFrame(draw);
     };
-
     draw();
 
     const handleResize = () => {
@@ -83,7 +69,6 @@ export default function Hero() {
       canvas.height = canvas.offsetHeight;
     };
     window.addEventListener("resize", handleResize);
-
     return () => {
       cancelAnimationFrame(animId);
       window.removeEventListener("resize", handleResize);
@@ -96,135 +81,112 @@ export default function Hero() {
       className="relative min-h-screen flex flex-col justify-center overflow-hidden grid-bg"
     >
       {/* Particle canvas */}
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 w-full h-full"
-        style={{ pointerEvents: "none" }}
-      />
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" style={{ pointerEvents: "none" }} />
 
       {/* Orbs */}
-      <div
-        className="orb absolute w-96 h-96 top-1/4 right-1/4 opacity-30"
-        style={{ background: "radial-gradient(circle, #14b8a6, transparent 70%)" }}
-      />
-      <div
-        className="orb absolute w-64 h-64 bottom-1/3 left-1/6 opacity-20"
-        style={{
-          background: "radial-gradient(circle, #06b6d4, transparent 70%)",
-          animationDelay: "3s",
-        }}
-      />
+      <div className="orb absolute w-[500px] h-[500px] top-1/4 right-0 opacity-20"
+        style={{ background: "radial-gradient(circle, #14b8a6, transparent 70%)" }} />
+      <div className="orb absolute w-72 h-72 bottom-1/4 left-0 opacity-15"
+        style={{ background: "radial-gradient(circle, #06b6d4, transparent 70%)", animationDelay: "3s" }} />
 
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-20">
-        <div className="max-w-4xl">
-          {/* Badge */}
-          <div className="badge mb-8 animate-fade-up">
-            <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse-slow" />
-            AI-First Software Engineering
-          </div>
+      {/* Content — 2-column grid */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-20 w-full">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-          {/* H1 */}
-          <h1
-            className="mb-6 leading-[1.08] tracking-tight"
-            style={{
-              fontFamily: "'Syne', sans-serif",
-              fontWeight: 800,
-              fontSize: "clamp(2.2rem, 4.5vw, 4rem)",
-            }}
-          >
-            <span style={{ color: "var(--text-primary)" }}>Ingeniería de Software</span>
-            <br />
-            <span className="gradient-text">Aumentada por IA</span>
-            <span style={{ color: "var(--text-muted)", fontSize: "0.65em", fontWeight: 600 }}>{" "}(AIFSD)</span>
-          </h1>
+          {/* LEFT — Text */}
+          <div>
+            <div className="badge mb-8">
+              <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse-slow" />
+              AI-First Software Engineering
+            </div>
 
-          {/* Subtitle */}
-          <p
-            className="mb-6 max-w-3xl leading-relaxed"
-            style={{
-              color: "var(--text-muted)",
-              fontSize: "clamp(1rem, 2vw, 1.2rem)",
-              fontFamily: "'DM Sans', sans-serif",
-            }}
-          >
-            Transformamos intenciones de negocio en sistemas funcionales en{" "}
-            <strong style={{ color: "var(--text-primary)" }}>1/3 del tiempo</strong>.
-            Somos la factoría de software líder. Utilizamos la orquestación agéntica y la
-            arquitectura de alta gobernanza para reducir su{" "}
-            <strong style={{ color: "var(--accent-teal)" }}>Time-to-Market (MVP)</strong>{" "}
-            de 12 a solo <strong style={{ color: "var(--accent-teal)" }}>4 meses</strong>.
-          </p>
-
-          {/* Hook quote */}
-          <blockquote
-            className="mb-10 pl-5 py-4 max-w-2xl"
-            style={{
-              borderLeft: "3px solid var(--accent-teal)",
-              background: "rgba(20, 184, 166, 0.04)",
-              borderRadius: "0 8px 8px 0",
-            }}
-          >
-            <p
-              className="italic leading-relaxed"
+            <h1
+              className="mb-6 leading-[1.1] tracking-tight"
               style={{
-                color: "var(--text-muted)",
-                fontFamily: "'DM Sans', sans-serif",
-                fontStyle: "italic",
+                fontFamily: "'Syne', sans-serif",
+                fontWeight: 800,
+                fontSize: "clamp(2.4rem, 4vw, 3.6rem)",
               }}
             >
-              Su próximo MVP ya no tiene que tomar 9 meses. Con Ingeniería Aumentada por
-              IA, entregamos funcionalidad validada y testeada en{" "}
-              <strong style={{ color: "var(--text-primary)", fontStyle: "normal" }}>
-                90 días
-              </strong>
-              , garantizando un ciclo de Pull Request{" "}
-              <strong style={{ color: "var(--accent-teal)", fontStyle: "normal" }}>
-                4 veces más rápido
-              </strong>
-              .
-            </p>
-          </blockquote>
+              <span style={{ color: "var(--text-primary)" }}>Ingeniería de Software</span>
+              <br />
+              <span className="gradient-text">Aumentada por IA</span>
+              <span style={{ color: "var(--text-muted)", fontSize: "0.55em", fontWeight: 600 }}>{" "}(AIFSD)</span>
+            </h1>
 
-          {/* CTAs */}
-          <div className="flex flex-wrap gap-4">
-            <a href="#services" className="btn-primary">
-              Vea nuestra Metodología de Entrega
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
-            <a href="#services" className="btn-outline">
-              Ver Servicios
-            </a>
-          </div>
-        </div>
-
-        {/* Metrics row */}
-        <div className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-4">
-          {metrics.map((m) => (
-            <div
-              key={m.value}
-              className="glass-card p-6 text-center animated-border"
+            <p
+              className="mb-6 leading-relaxed"
+              style={{
+                color: "var(--text-muted)",
+                fontSize: "clamp(1rem, 1.5vw, 1.15rem)",
+                fontFamily: "'DM Sans', sans-serif",
+              }}
             >
-              <div className="metric-value mb-1">{m.value}</div>
-              <div
-                className="text-sm font-medium"
-                style={{ color: "var(--text-muted)", fontFamily: "'DM Sans', sans-serif" }}
+              Transformamos intenciones de negocio en sistemas funcionales en{" "}
+              <strong style={{ color: "var(--text-primary)" }}>1/3 del tiempo</strong>.
+              Reducimos su{" "}
+              <strong style={{ color: "var(--accent-teal)" }}>Time-to-Market</strong>{" "}
+              de 12 a solo <strong style={{ color: "var(--accent-teal)" }}>4 meses</strong>.
+            </p>
+
+            <blockquote
+              className="mb-10 pl-5 py-4"
+              style={{
+                borderLeft: "3px solid var(--accent-teal)",
+                background: "rgba(20, 184, 166, 0.04)",
+                borderRadius: "0 8px 8px 0",
+              }}
+            >
+              <p
+                className="leading-relaxed text-sm"
+                style={{ color: "var(--text-muted)", fontStyle: "italic", fontFamily: "'DM Sans', sans-serif" }}
               >
-                {m.label}
-              </div>
+                Su próximo MVP ya no tiene que tomar 9 meses. Entregamos
+                funcionalidad validada en{" "}
+                <strong style={{ color: "var(--text-primary)", fontStyle: "normal" }}>90 días</strong>,
+                con un ciclo de Pull Request{" "}
+                <strong style={{ color: "var(--accent-teal)", fontStyle: "normal" }}>4× más rápido</strong>.
+              </p>
+            </blockquote>
+
+            <div className="flex flex-wrap gap-4">
+              <a href="#services" className="btn-primary">
+                Vea nuestra Metodología
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+              <a href="#contact" className="btn-outline">
+                Contáctenos
+              </a>
             </div>
-          ))}
+          </div>
+
+          {/* RIGHT — Metrics grid */}
+          <div className="grid grid-cols-2 gap-4">
+            {metrics.map((m) => (
+              <div
+                key={m.value}
+                className="glass-card glass-card-hover p-6 flex flex-col gap-3"
+              >
+                <span className="text-2xl">{m.icon}</span>
+                <div className="metric-value" style={{ fontSize: "2.2rem" }}>{m.value}</div>
+                <div
+                  className="text-sm font-medium leading-snug"
+                  style={{ color: "var(--text-muted)", fontFamily: "'DM Sans', sans-serif" }}
+                >
+                  {m.label}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
       {/* Bottom fade */}
       <div
         className="absolute bottom-0 left-0 right-0 h-32"
-        style={{
-          background: "linear-gradient(to bottom, transparent, var(--bg-primary))",
-        }}
+        style={{ background: "linear-gradient(to bottom, transparent, var(--bg-primary))" }}
       />
     </section>
   );
