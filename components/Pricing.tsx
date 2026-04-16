@@ -76,7 +76,7 @@ export default function Pricing() {
               color: "var(--text-primary)",
             }}
           >
-            <span className="gradient-text">Resultados</span>, no por Horas
+            <span className="gradient-text">Precios por Resultados</span>, no por Horas
           </h2>
           <p className="text-lg leading-relaxed" style={{ color: "var(--text-muted)" }}>
             Tres modelos de precios diseñados para alinear nuestro éxito con el suyo.

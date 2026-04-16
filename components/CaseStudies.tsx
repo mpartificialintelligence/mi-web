@@ -74,8 +74,8 @@ export default function CaseStudies() {
               color: "var(--text-primary)",
             }}
           >
-            Resultados que{" "}
-            <span className="gradient-text">Hablan por Sí Solos</span>
+            Casos de Éxito en{" "}
+            <span className="gradient-text">Ingeniería de Software con IA</span>
           </h2>
           <p className="text-lg leading-relaxed" style={{ color: "var(--text-muted)" }}>
             Métricas reales de aceleración en proyectos reales bajo nuestra metodología de entrega.
