@@ -84,7 +84,7 @@ export default function Methodology() {
           <h2
             className="mb-4 leading-tight"
             style={{
-              fontFamily: "'Syne', sans-serif",
+              fontFamily: "var(--font-syne), sans-serif",
               fontWeight: 800,
               fontSize: "clamp(2rem, 4vw, 3.5rem)",
               color: "var(--text-primary)",
@@ -121,7 +121,7 @@ export default function Methodology() {
                     style={{
                       background: `${phase.color}15`,
                       border: `2px solid ${phase.color}40`,
-                      fontFamily: "'Syne', sans-serif",
+                      fontFamily: "var(--font-syne), sans-serif",
                       color: phase.color,
                     }}
                   >
@@ -137,7 +137,7 @@ export default function Methodology() {
 
                   <h3
                     className="text-base font-bold mb-3"
-                    style={{ fontFamily: "'Syne', sans-serif", color: "var(--text-primary)" }}
+                    style={{ fontFamily: "var(--font-syne), sans-serif", color: "var(--text-primary)" }}
                   >
                     {phase.name}
                   </h3>
@@ -184,7 +184,7 @@ export default function Methodology() {
           <div className="flex items-center gap-4 mb-8">
             <h3
               className="text-2xl font-bold whitespace-nowrap"
-              style={{ fontFamily: "'Syne', sans-serif", color: "var(--text-primary)" }}
+              style={{ fontFamily: "var(--font-syne), sans-serif", color: "var(--text-primary)" }}
             >
               Garantías de Gobernanza
             </h3>
@@ -206,7 +206,7 @@ export default function Methodology() {
                 <div>
                   <h4
                     className="font-bold mb-2"
-                    style={{ fontFamily: "'Syne', sans-serif", color: "var(--text-primary)" }}
+                    style={{ fontFamily: "var(--font-syne), sans-serif", color: "var(--text-primary)" }}
                   >
                     {g.title}
                   </h4>

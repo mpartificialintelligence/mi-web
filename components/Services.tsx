@@ -11,6 +11,7 @@ const services = [
     ai: "AI-First Discovery: Agentes de NLP detectan inconsistencias en requisitos. Spec-Driven Development: Generación de código basado en especificación validada.",
     pricing: "Outcome-Based: Precio fijo por hito funcional validado (ej. «Módulo de pagos funcional»).",
     icon: "🚀",
+    ideal: "Startups y empresas que quieren lanzar rápido",
   },
   {
     name: "Shift-Right",
@@ -21,6 +22,7 @@ const services = [
     ai: "Refactorización Agéntica: Agentes analizan y traducen lógica de negocio con 87% de precisión. Patrón «Estrangulador».",
     pricing: "Shared Savings (Value-Based): 15–30% de los ahorros operativos generados en mantenimiento.",
     icon: "🔄",
+    ideal: "Empresas con sistemas legados costosos de mantener",
   },
   {
     name: "Sentinel Ops",
@@ -31,6 +33,7 @@ const services = [
     ai: "Remediación Autónoma: Ejecución de correcciones bajo guardrail (ej. rollback de despliegues). Investigación Paralela: Agentes identifican la causa raíz en segundos.",
     pricing: "Híbrido: Suscripción base + tarifa por incidente resuelto exitosamente.",
     icon: "🛡️",
+    ideal: "Productos en producción con alta demanda de disponibilidad",
   },
   {
     name: "Veritas QA",
@@ -41,6 +44,7 @@ const services = [
     ai: "Generación Agéntica de Pruebas: Creación automática de suites Playwright/Cypress. Datos Sintéticos: Pruebas masivas que cumplen normativas de privacidad.",
     pricing: "Outcome-Based: Tarifa por «Suite de Pruebas Verificada» o «Release Auditado».",
     icon: "✅",
+    ideal: "Equipos que necesitan calidad regulatoria (GDPR/HIPAA)",
   },
 ];
 
@@ -63,7 +67,7 @@ export default function Services() {
           <h2
             className="mb-4 leading-tight"
             style={{
-              fontFamily: "'Syne', sans-serif",
+              fontFamily: "var(--font-syne), sans-serif",
               fontWeight: 800,
               fontSize: "clamp(1.75rem, 2.5vw, 2.6rem)",
               color: "var(--text-primary)",
@@ -92,7 +96,7 @@ export default function Services() {
                     <h3
                       className="font-bold text-xl"
                       style={{
-                        fontFamily: "'Syne', sans-serif",
+                        fontFamily: "var(--font-syne), sans-serif",
                         color: "var(--text-primary)",
                       }}
                     >
@@ -164,6 +168,41 @@ export default function Services() {
                 </svg>
                 <span style={{ color: "var(--text-muted)" }}>{s.pricing}</span>
               </div>
+
+              {/* Ideal for */}
+              <div
+                className="text-xs px-3 py-2 rounded-lg"
+                style={{
+                  background: `${s.tagColor}08`,
+                  border: `1px solid ${s.tagColor}20`,
+                  color: "var(--text-muted)",
+                }}
+              >
+                <span style={{ color: s.tagColor, fontWeight: 600 }}>Ideal para: </span>
+                {s.ideal}
+              </div>
+
+              {/* CTA */}
+              <a
+                href="#contact"
+                className="flex items-center justify-center gap-2 text-sm font-semibold py-2.5 rounded-lg transition-all duration-200"
+                style={{
+                  color: s.tagColor,
+                  border: `1px solid ${s.tagColor}30`,
+                  background: `${s.tagColor}08`,
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.background = `${s.tagColor}18`;
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.background = `${s.tagColor}08`;
+                }}
+              >
+                Consultar este servicio
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
             </div>
           ))}
         </div>
@@ -183,7 +222,7 @@ export default function Services() {
           >
             <p
               className="text-2xl font-bold mb-3"
-              style={{ fontFamily: "'Syne', sans-serif", color: "var(--text-primary)" }}
+              style={{ fontFamily: "var(--font-syne), sans-serif", color: "var(--text-primary)" }}
             >
               90% del código generado por agentes.{" "}
               <span className="gradient-text">100% supervisado por humanos.</span>
