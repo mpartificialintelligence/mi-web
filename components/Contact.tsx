@@ -38,7 +38,7 @@ export default function Contact() {
           <h2
             className="mb-4 leading-tight"
             style={{
-              fontFamily: "'Syne', sans-serif",
+              fontFamily: "var(--font-syne), sans-serif",
               fontWeight: 800,
               fontSize: "clamp(1.75rem, 2.5vw, 2.6rem)",
               color: "var(--text-primary)",
@@ -84,7 +84,7 @@ export default function Contact() {
                 >
                   Ubicación
                 </div>
-                <p className="font-semibold" style={{ color: "var(--text-primary)", fontFamily: "'Syne', sans-serif" }}>
+                <p className="font-semibold" style={{ color: "var(--text-primary)", fontFamily: "var(--font-syne), sans-serif" }}>
                   Medellín, Antioquia
                 </p>
                 <p className="text-sm mt-0.5" style={{ color: "var(--text-muted)" }}>
@@ -168,7 +168,7 @@ export default function Contact() {
                   <div className="text-5xl mb-4">✅</div>
                   <h3
                     className="text-xl font-bold mb-2"
-                    style={{ fontFamily: "'Syne', sans-serif", color: "var(--text-primary)" }}
+                    style={{ fontFamily: "var(--font-syne), sans-serif", color: "var(--text-primary)" }}
                   >
                     ¡Mensaje enviado!
                   </h3>

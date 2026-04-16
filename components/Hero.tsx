@@ -103,7 +103,7 @@ export default function Hero() {
             <h1
               className="mb-6 leading-[1.1] tracking-tight"
               style={{
-                fontFamily: "'Syne', sans-serif",
+                fontFamily: "var(--font-syne), sans-serif",
                 fontWeight: 800,
                 fontSize: "clamp(2rem, 4vw, 3.6rem)",
                 wordBreak: "break-word",
@@ -120,7 +120,7 @@ export default function Hero() {
               style={{
                 color: "var(--text-muted)",
                 fontSize: "clamp(1rem, 1.5vw, 1.15rem)",
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "var(--font-dm-sans), sans-serif",
               }}
             >
               Transformamos intenciones de negocio en sistemas funcionales en{" "}
@@ -140,7 +140,7 @@ export default function Hero() {
             >
               <p
                 className="leading-relaxed text-sm"
-                style={{ color: "var(--text-muted)", fontStyle: "italic", fontFamily: "'DM Sans', sans-serif" }}
+                style={{ color: "var(--text-muted)", fontStyle: "italic", fontFamily: "var(--font-dm-sans), sans-serif" }}
               >
                 Su próximo MVP ya no tiene que tomar 9 meses. Entregamos
                 funcionalidad validada en{" "}
@@ -174,7 +174,7 @@ export default function Hero() {
                 <div className="metric-value" style={{ fontSize: "2.2rem" }}>{m.value}</div>
                 <div
                   className="text-sm font-medium leading-snug"
-                  style={{ color: "var(--text-muted)", fontFamily: "'DM Sans', sans-serif" }}
+                  style={{ color: "var(--text-muted)", fontFamily: "var(--font-dm-sans), sans-serif" }}
                 >
                   {m.label}
                 </div>
@@ -186,7 +186,7 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10">
-        <span className="text-xs uppercase tracking-widest" style={{ color: "var(--text-muted)", fontFamily: "'DM Sans', sans-serif" }}>
+        <span className="text-xs uppercase tracking-widest" style={{ color: "var(--text-muted)", fontFamily: "var(--font-dm-sans), sans-serif" }}>
           Explorar
         </span>
         <div

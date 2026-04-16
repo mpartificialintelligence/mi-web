@@ -68,7 +68,7 @@ export default function CaseStudies() {
           <h2
             className="mb-4 leading-tight"
             style={{
-              fontFamily: "'Syne', sans-serif",
+              fontFamily: "var(--font-syne), sans-serif",
               fontWeight: 800,
               fontSize: "clamp(1.75rem, 2.5vw, 2.6rem)",
               color: "var(--text-primary)",
@@ -116,7 +116,7 @@ export default function CaseStudies() {
                 <div className="lg:col-span-3 p-8 flex flex-col gap-6">
                   <h3
                     className="text-xl font-bold leading-snug"
-                    style={{ fontFamily: "'Syne', sans-serif", color: "var(--text-primary)" }}
+                    style={{ fontFamily: "var(--font-syne), sans-serif", color: "var(--text-primary)" }}
                   >
                     {c.title}
                   </h3>
@@ -161,7 +161,7 @@ export default function CaseStudies() {
                         <div
                           className="text-2xl font-black mb-1"
                           style={{
-                            fontFamily: "'Syne', sans-serif",
+                            fontFamily: "var(--font-syne), sans-serif",
                             color: r.color,
                           }}
                         >
@@ -210,7 +210,7 @@ export default function CaseStudies() {
             <div className="badge mb-3 mx-auto">Plantilla de Caso de Éxito</div>
             <h3
               className="text-xl font-bold"
-              style={{ fontFamily: "'Syne', sans-serif", color: "var(--text-primary)" }}
+              style={{ fontFamily: "var(--font-syne), sans-serif", color: "var(--text-primary)" }}
             >
               Estructura de Todo Caso de Éxito
             </h3>
@@ -227,7 +227,7 @@ export default function CaseStudies() {
                 </div>
                 <div
                   className="font-bold text-sm"
-                  style={{ fontFamily: "'Syne', sans-serif", color: "var(--text-primary)" }}
+                  style={{ fontFamily: "var(--font-syne), sans-serif", color: "var(--text-primary)" }}
                 >
                   {s.label}
                 </div>

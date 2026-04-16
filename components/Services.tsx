@@ -67,7 +67,7 @@ export default function Services() {
           <h2
             className="mb-4 leading-tight"
             style={{
-              fontFamily: "'Syne', sans-serif",
+              fontFamily: "var(--font-syne), sans-serif",
               fontWeight: 800,
               fontSize: "clamp(1.75rem, 2.5vw, 2.6rem)",
               color: "var(--text-primary)",
@@ -96,7 +96,7 @@ export default function Services() {
                     <h3
                       className="font-bold text-xl"
                       style={{
-                        fontFamily: "'Syne', sans-serif",
+                        fontFamily: "var(--font-syne), sans-serif",
                         color: "var(--text-primary)",
                       }}
                     >
@@ -222,7 +222,7 @@ export default function Services() {
           >
             <p
               className="text-2xl font-bold mb-3"
-              style={{ fontFamily: "'Syne', sans-serif", color: "var(--text-primary)" }}
+              style={{ fontFamily: "var(--font-syne), sans-serif", color: "var(--text-primary)" }}
             >
               90% del código generado por agentes.{" "}
               <span className="gradient-text">100% supervisado por humanos.</span>

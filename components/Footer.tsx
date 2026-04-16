@@ -70,7 +70,7 @@ export default function Footer() {
           <div>
             <h4
               className="font-bold mb-4 text-sm uppercase tracking-widest"
-              style={{ color: "var(--text-primary)", fontFamily: "'Syne', sans-serif" }}
+              style={{ color: "var(--text-primary)", fontFamily: "var(--font-syne), sans-serif" }}
             >
               Navegación
             </h4>
@@ -99,7 +99,7 @@ export default function Footer() {
           <div>
             <h4
               className="font-bold mb-4 text-sm uppercase tracking-widest"
-              style={{ color: "var(--text-primary)", fontFamily: "'Syne', sans-serif" }}
+              style={{ color: "var(--text-primary)", fontFamily: "var(--font-syne), sans-serif" }}
             >
               Servicios
             </h4>
@@ -133,7 +133,7 @@ export default function Footer() {
           <div>
             <div
               className="font-bold text-lg mb-1"
-              style={{ fontFamily: "'Syne', sans-serif", color: "var(--text-primary)" }}
+              style={{ fontFamily: "var(--font-syne), sans-serif", color: "var(--text-primary)" }}
             >
               ¿Listo para acelerar su negocio?
             </div>

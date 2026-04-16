@@ -87,7 +87,7 @@ export default function Navigation() {
                   className="text-sm font-medium transition-colors duration-200 relative"
                   style={{
                     color: isActive ? "var(--accent-teal)" : "var(--text-muted)",
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "var(--font-dm-sans), sans-serif",
                   }}
                   onMouseEnter={(e) =>
                     ((e.target as HTMLElement).style.color = "var(--accent-teal)")
@@ -161,7 +161,7 @@ export default function Navigation() {
                 style={{
                   color: activeSection === link.id ? "var(--accent-teal)" : "var(--text-muted)",
                   borderColor: "rgba(20, 184, 166, 0.1)",
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: "var(--font-dm-sans), sans-serif",
                 }}
                 onClick={() => setMenuOpen(false)}
               >

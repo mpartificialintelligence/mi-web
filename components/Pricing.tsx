@@ -70,7 +70,7 @@ export default function Pricing() {
           <h2
             className="mb-4 leading-tight"
             style={{
-              fontFamily: "'Syne', sans-serif",
+              fontFamily: "var(--font-syne), sans-serif",
               fontWeight: 800,
               fontSize: "clamp(1.75rem, 2.5vw, 2.6rem)",
               color: "var(--text-primary)",
@@ -118,7 +118,7 @@ export default function Pricing() {
                 <div>
                   <h3
                     className="text-xl font-bold"
-                    style={{ fontFamily: "'Syne', sans-serif", color: "var(--text-primary)" }}
+                    style={{ fontFamily: "var(--font-syne), sans-serif", color: "var(--text-primary)" }}
                   >
                     {m.name}
                   </h3>
@@ -202,7 +202,7 @@ export default function Pricing() {
           <div
             className="text-2xl md:text-3xl font-bold"
             style={{
-              fontFamily: "'Syne', sans-serif",
+              fontFamily: "var(--font-syne), sans-serif",
               color: "var(--text-primary)",
             }}
           >
