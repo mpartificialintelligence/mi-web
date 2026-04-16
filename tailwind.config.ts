@@ -1,0 +1,49 @@
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        brand: {
+          teal: "#14b8a6",
+          cyan: "#06b6d4",
+          dark: "#070d1a",
+          navy: "#0d1528",
+          card: "#0f1e35",
+        },
+      },
+      fontFamily: {
+        syne: ["Syne", "sans-serif"],
+        dm: ["DM Sans", "sans-serif"],
+      },
+      animation: {
+        "gradient-shift": "gradientShift 8s ease infinite",
+        "float": "float 6s ease-in-out infinite",
+        "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "fade-up": "fadeUp 0.6s ease-out forwards",
+      },
+      keyframes: {
+        gradientShift: {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-20px)" },
+        },
+        fadeUp: {
+          "0%": { opacity: "0", transform: "translateY(30px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+      },
+    },
+  },
+  plugins: [],
+};
+
+export default config;

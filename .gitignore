@@ -30,7 +30,7 @@ x86/
 [Aa][Rr][Mm]64[Ee][Cc]/
 bld/
 [Oo]bj/
-[Oo]ut/
+# [Oo]ut/ — kept for Next.js static export (GitHub Pages)
 [Ll]og/
 [Ll]ogs/
 
@@ -300,6 +300,7 @@ FakesAssemblies/
 # Node.js Tools for Visual Studio
 .ntvs_analysis.dat
 node_modules/
+.next/
 
 # Visual Studio 6 build log
 *.plg
@@ -416,3 +417,11 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# MacOS files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# claude's files
+*.claude
