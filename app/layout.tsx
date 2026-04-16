@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Ingeniería de Software Aumentada por IA. Transformamos intenciones de negocio en sistemas funcionales en 1/3 del tiempo.",
   icons: {
-    icon: process.env.NODE_ENV === "production" ? "/mi-web/logo.png" : "/logo.png",
+    icon: "/logo.png",
   },
 };
 
