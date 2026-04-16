@@ -1,6 +1,4 @@
-const BASE_PATH =
-  process.env.NODE_ENV === "production" ? "/mi-web" : "";
-
+// Custom domain serves from root — no basePath needed
 export function img(path: string): string {
-  return `${BASE_PATH}${path}`;
+  return path;
 }
