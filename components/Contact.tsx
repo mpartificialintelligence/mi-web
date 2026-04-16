@@ -52,6 +52,20 @@ export default function Contact() {
           </p>
         </div>
 
+        {/* Response time — visible before the form */}
+        <div
+          className="flex items-center justify-center gap-3 mb-10"
+        >
+          <span
+            className="w-2.5 h-2.5 rounded-full flex-shrink-0"
+            style={{ background: "var(--accent-teal)", boxShadow: "0 0 8px rgba(20,184,166,0.6)" }}
+          />
+          <span className="text-sm" style={{ color: "var(--text-muted)" }}>
+            Tiempo de respuesta:{" "}
+            <strong style={{ color: "var(--text-primary)" }}>menos de 24 horas</strong>
+          </span>
+        </div>
+
         <div className="grid lg:grid-cols-5 gap-10">
           {/* Contact info */}
           <div className="lg:col-span-2 flex flex-col gap-6">
@@ -144,23 +158,6 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Response time badge */}
-            <div
-              className="p-4 rounded-xl flex items-center gap-3"
-              style={{
-                background: "rgba(20,184,166,0.05)",
-                border: "1px solid rgba(20,184,166,0.15)",
-              }}
-            >
-              <span
-                className="w-2.5 h-2.5 rounded-full flex-shrink-0"
-                style={{ background: "var(--accent-teal)", boxShadow: "0 0 8px rgba(20,184,166,0.6)" }}
-              />
-              <span className="text-sm" style={{ color: "var(--text-muted)" }}>
-                Tiempo de respuesta:{" "}
-                <strong style={{ color: "var(--text-primary)" }}>menos de 24 horas</strong>
-              </span>
-            </div>
           </div>
 
           {/* Form */}
@@ -217,7 +214,7 @@ export default function Contact() {
                         className="block text-xs font-semibold uppercase tracking-widest mb-2"
                         style={{ color: "var(--accent-teal)" }}
                       >
-                        Empresa
+                        Empresa <span style={{ color: "var(--text-muted)", fontWeight: 400, textTransform: "none" }}>(opcional)</span>
                       </label>
                       <input
                         type="text"
@@ -295,7 +292,7 @@ export default function Contact() {
                   </button>
 
                   <p className="text-xs text-center" style={{ color: "var(--text-muted)" }}>
-                    Al enviar, se abrirá su cliente de correo con el mensaje listo.
+                    Sus datos son confidenciales y no se compartirán con terceros.
                   </p>
                 </form>
               )}

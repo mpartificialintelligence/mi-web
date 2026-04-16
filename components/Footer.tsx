@@ -15,9 +15,6 @@ const services = [
   "Shift-Right",
   "Sentinel Ops",
   "Veritas QA",
-  "Doc-Intelligence Fabric",
-  "Concierge Agent",
-  "Code Auditor Pro",
 ];
 
 export default function Footer() {
@@ -56,15 +53,15 @@ export default function Footer() {
             <div className="flex flex-col gap-2 text-sm" style={{ color: "var(--text-muted)" }}>
               <div className="flex items-center gap-2">
                 <span style={{ color: "var(--accent-teal)" }}>▸</span>
-                <span>Groundedness Score &gt; 0.9</span>
+                <span>3× más rápido al mercado</span>
               </div>
               <div className="flex items-center gap-2">
                 <span style={{ color: "var(--accent-teal)" }}>▸</span>
-                <span>Uptime del Sistema: 99.9%</span>
+                <span>Time-to-Market: de 12 a 4 meses</span>
               </div>
               <div className="flex items-center gap-2">
                 <span style={{ color: "var(--accent-teal)" }}>▸</span>
-                <span>Latencia p95: &lt;1.5s</span>
+                <span>90% reducción en MTTR</span>
               </div>
             </div>
           </div>
@@ -141,7 +138,7 @@ export default function Footer() {
               ¿Listo para acelerar su negocio?
             </div>
             <div className="text-sm" style={{ color: "var(--text-muted)" }}>
-              Descubra cómo podemos acelerar su negocio
+              Agende una sesión de 30 minutos gratuita con nuestro equipo
             </div>
           </div>
           <a href="#contact" className="btn-primary whitespace-nowrap">

@@ -4,6 +4,7 @@ const models = [
     subtitle: "Basado en Resultados",
     icon: "🎯",
     color: "#14b8a6",
+    idealFor: "Startups y proyectos acotados",
     description:
       "El precio se fija por la unidad de resultado entregada (ej. «Módulo de pagos funcional» o «Ticket de soporte resuelto»).",
     benefit:
@@ -21,6 +22,7 @@ const models = [
     subtitle: "Ahorros Compartidos",
     icon: "📈",
     color: "#06b6d4",
+    idealFor: "Empresas medianas y grandes",
     description:
       "Aplicado a modernización y optimización. La tarifa se basa en un porcentaje (15–30%) de los ahorros operativos o ingresos incrementales reales que generamos.",
     benefit:
@@ -38,6 +40,7 @@ const models = [
     subtitle: "Tarifa Base + Variable",
     icon: "⚡",
     color: "#34d399",
+    idealFor: "Empresas con productos en escala",
     description:
       "Tarifa fija mensual por el acceso al equipo especializado («AI-Augmented Squads») más una tarifa variable basada en el consumo real de recursos de IA (tokens, llamadas a API).",
     benefit: "Predictibilidad con flexibilidad de escala.",
@@ -125,6 +128,19 @@ export default function Pricing() {
                 </div>
               </div>
 
+              {/* Ideal for */}
+              <div
+                className="text-xs px-3 py-1.5 rounded-full self-start"
+                style={{
+                  background: `${m.color}12`,
+                  border: `1px solid ${m.color}25`,
+                  color: "var(--text-muted)",
+                }}
+              >
+                <span style={{ color: m.color, fontWeight: 600 }}>Ideal para: </span>
+                {m.idealFor}
+              </div>
+
               <div style={{ borderTop: "1px solid rgba(20,184,166,0.1)" }} />
 
               {/* Description */}
@@ -159,14 +175,14 @@ export default function Pricing() {
 
               {/* CTA */}
               <a
-                href="#cases"
+                href="#contact"
                 className="btn-outline justify-center text-sm py-2.5"
                 style={{
                   color: m.color,
                   borderColor: `${m.color}40`,
                 }}
               >
-                Ver Casos de Éxito
+                Empezar con este modelo →
               </a>
             </div>
           ))}
