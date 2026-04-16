@@ -39,7 +39,7 @@ export default function About() {
             style={{
               fontFamily: "'Syne', sans-serif",
               fontWeight: 800,
-              fontSize: "clamp(2rem, 4vw, 3.5rem)",
+              fontSize: "clamp(1.75rem, 2.5vw, 2.6rem)",
               color: "var(--text-primary)",
             }}
           >
@@ -57,17 +57,16 @@ export default function About() {
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Image */}
-          <div className="relative">
+          <div className="relative pb-8 pr-8">
             <div
               className="relative rounded-2xl overflow-hidden"
-              style={{ border: "1px solid rgba(20, 184, 166, 0.15)" }}
+              style={{ border: "1px solid rgba(20, 184, 166, 0.15)", height: "460px" }}
             >
               <Image
                 src={img("/images/office.png")}
                 alt="Modern AI engineering office"
-                width={700}
-                height={480}
-                className="w-full object-cover"
+                fill
+                className="object-cover"
                 style={{ filter: "brightness(0.85) contrast(1.05)" }}
               />
               {/* Overlay gradient */}
@@ -82,7 +81,7 @@ export default function About() {
 
             {/* Floating stat */}
             <div
-              className="glass-card absolute -bottom-6 -right-6 p-5"
+              className="glass-card absolute bottom-0 right-0 p-5"
               style={{ minWidth: "180px" }}
             >
               <div className="metric-value text-3xl">3×</div>
@@ -121,10 +120,9 @@ export default function About() {
               <p className="leading-relaxed" style={{ color: "var(--text-muted)" }}>
                 Acelerar el valor de negocio de nuestros clientes en un{" "}
                 <strong style={{ color: "var(--text-primary)" }}>30% a 55%</strong>{" "}
-                mediante la implementación de nuestro marco{" "}
-                <strong style={{ color: "var(--text-primary)" }}>APEX</strong>{" "}
-                (Assess-Pilot-Expand-eXcel), garantizando que la productividad se traduzca
-                en una ventaja competitiva.
+                mediante la implementación de nuestra{" "}
+                <strong style={{ color: "var(--text-primary)" }}>Metodología de Desarrollo de Alta Velocidad</strong>,
+                garantizando que la productividad se traduzca en una ventaja competitiva.
               </p>
             </div>
 
@@ -139,8 +137,10 @@ export default function About() {
               <p className="leading-relaxed text-sm" style={{ color: "var(--text-muted)" }}>
                 Mientras que las agencias tradicionales luchan por justificar horas
                 facturables, nosotros utilizamos equipos de agentes autónomos, orquestados
-                bajo nuestro marco APEX, para acelerar la entrega de productos digitales
-                hasta <strong style={{ color: "var(--text-primary)" }}>3 veces</strong>.
+                bajo{" "}
+                <strong style={{ color: "var(--text-primary)" }}>nuestra metodología propietaria de entrega</strong>,
+                para acelerar los productos digitales hasta{" "}
+                <strong style={{ color: "var(--text-primary)" }}>3 veces</strong>.
                 Reducimos el Time-to-Market de 12 meses a solo{" "}
                 <strong style={{ color: "var(--accent-teal)" }}>4 meses</strong>.
               </p>
@@ -148,9 +148,10 @@ export default function About() {
                 className="leading-relaxed text-sm mt-3"
                 style={{ color: "var(--text-muted)" }}
               >
-                Nuestros ingenieros senior se enfocan exclusivamente en la arquitectura, la
-                estrategia de negocio y la seguridad, mientras que nuestros agentes
-                gestionan el{" "}
+                Nuestra filosofía es clara:{" "}
+                <strong style={{ color: "var(--text-primary)" }}>IA como el motor, Humano como el Gobernador</strong>.
+                Nuestros ingenieros senior se enfocan en arquitectura, estrategia y seguridad,
+                mientras que nuestros agentes gestionan el{" "}
                 <strong style={{ color: "var(--accent-teal)" }}>90% del código</strong>{" "}
                 repetitivo, las pruebas y la refactorización.
               </p>

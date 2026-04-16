@@ -69,12 +69,11 @@ export default function Pricing() {
             style={{
               fontFamily: "'Syne', sans-serif",
               fontWeight: 800,
-              fontSize: "clamp(2rem, 4vw, 3.5rem)",
+              fontSize: "clamp(1.75rem, 2.5vw, 2.6rem)",
               color: "var(--text-primary)",
             }}
           >
-            Pagamos por{" "}
-            <span className="gradient-text">Resultados</span>, no por Tiempo
+            <span className="gradient-text">Resultados</span>, no por Horas
           </h2>
           <p className="text-lg leading-relaxed" style={{ color: "var(--text-muted)" }}>
             Tres modelos de precios diseñados para alinear nuestro éxito con el suyo.
