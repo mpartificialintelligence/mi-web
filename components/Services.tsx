@@ -73,7 +73,7 @@ export default function Services() {
               color: "var(--text-primary)",
             }}
           >
-            Nuestros{" "}<span className="gradient-text">Servicios</span>
+            Desarrollo de Software con{" "}<span className="gradient-text">Inteligencia Artificial</span>
           </h2>
           <p className="text-lg leading-relaxed" style={{ color: "var(--text-muted)" }}>
             Cuatro pilares de servicio diseñados para acelerar cada etapa de su ciclo de

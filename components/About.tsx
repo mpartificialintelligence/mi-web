@@ -43,8 +43,8 @@ export default function About() {
               color: "var(--text-primary)",
             }}
           >
-            El ADN de la{" "}
-            <span className="gradient-text">Ingeniería Agéntica</span>
+            Empresa de Software con IA en{" "}
+            <span className="gradient-text">Medellín, Colombia</span>
           </h2>
           <p
             className="max-w-2xl text-lg leading-relaxed"
