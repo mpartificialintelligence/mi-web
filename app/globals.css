@@ -85,16 +85,18 @@ body {
   background-size: 40px 40px;
 }
 
-/* Section transitions */
-.section-fade {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+/* Scroll reveal — never hides content, only adds animation when JS fires */
+.scroll-reveal {
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.section-fade.visible {
-  opacity: 1;
-  transform: translateY(0);
+.scroll-reveal.animate-in {
+  animation: subtleFadeUp 0.6s ease forwards;
+}
+
+@keyframes subtleFadeUp {
+  from { opacity: 0.4; transform: translateY(20px); }
+  to   { opacity: 1;   transform: translateY(0); }
 }
 
 /* Noise overlay */

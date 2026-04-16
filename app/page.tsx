@@ -12,42 +12,32 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   useEffect(() => {
+    // Only add animation class — never hides content if observer doesn't fire
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
+            entry.target.classList.add("animate-in");
+            observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.05, rootMargin: "0px 0px -40px 0px" }
     );
 
-    document.querySelectorAll(".section-fade").forEach((el) => observer.observe(el));
+    document.querySelectorAll(".scroll-reveal").forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
 
   return (
     <main>
       <Navigation />
-      <div className="section-fade">
-        <Hero />
-      </div>
-      <div className="section-fade">
-        <About />
-      </div>
-      <div className="section-fade">
-        <Services />
-      </div>
-      <div className="section-fade">
-        <Methodology />
-      </div>
-      <div className="section-fade">
-        <Pricing />
-      </div>
-      <div className="section-fade">
-        <CaseStudies />
-      </div>
+      <Hero />
+      <About />
+      <Services />
+      <Methodology />
+      <Pricing />
+      <CaseStudies />
       <Footer />
     </main>
   );
