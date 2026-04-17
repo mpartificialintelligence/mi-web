@@ -2,8 +2,12 @@ const models = [
   {
     name: "Outcome-Based",
     subtitle: "Basado en Resultados",
-    icon: "🎯",
-    color: "#14b8a6",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+      </svg>
+    ),
+    color: "#0d9488",
     idealFor: "Startups y proyectos acotados",
     description:
       "El precio se fija por la unidad de resultado entregada (ej. «Módulo de pagos funcional» o «Ticket de soporte resuelto»).",
@@ -20,8 +24,12 @@ const models = [
   {
     name: "Value-Based",
     subtitle: "Ahorros Compartidos",
-    icon: "📈",
-    color: "#06b6d4",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="23,6 13.5,15.5 8.5,10.5 1,18"/><polyline points="17,6 23,6 23,12"/>
+      </svg>
+    ),
+    color: "#0891b2",
     idealFor: "Empresas medianas y grandes",
     description:
       "Aplicado a modernización y optimización. La tarifa se basa en un porcentaje (15–30%) de los ahorros operativos o ingresos incrementales reales que generamos.",
@@ -38,8 +46,12 @@ const models = [
   {
     name: "Híbrido SaaS+Usage",
     subtitle: "Tarifa Base + Variable",
-    icon: "⚡",
-    color: "#34d399",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+      </svg>
+    ),
+    color: "#059669",
     idealFor: "Empresas con productos en escala",
     description:
       "Tarifa fija mensual por el acceso al equipo especializado («AI-Augmented Squads») más una tarifa variable basada en el consumo real de recursos de IA (tokens, llamadas a API).",
@@ -56,11 +68,15 @@ const models = [
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-28 relative overflow-hidden">
-      {/* Orb */}
+    <section
+      id="pricing"
+      className="py-28 relative overflow-hidden"
+      style={{ background: "var(--bg-primary)" }}
+    >
+      {/* Soft orb */}
       <div
-        className="orb absolute w-80 h-80 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-10"
-        style={{ background: "radial-gradient(circle, #14b8a6, transparent 70%)" }}
+        className="orb absolute w-96 h-96 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20"
+        style={{ background: "radial-gradient(circle, rgba(13,148,136,0.12), transparent 70%)" }}
       />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -89,23 +105,24 @@ export default function Pricing() {
           {models.map((m) => (
             <div
               key={m.name}
-              className="glass-card glass-card-hover p-7 flex flex-col gap-5 relative"
+              className="glass-card glass-card-hover p-7 flex flex-col gap-5 relative cursor-pointer"
               style={
                 m.highlight
                   ? {
-                      borderColor: `${m.color}40`,
-                      boxShadow: `0 0 60px ${m.color}10`,
+                      borderColor: `${m.color}35`,
+                      boxShadow: `0 8px 40px ${m.color}15, 0 2px 8px rgba(15,23,42,0.08)`,
                     }
                   : {}
               }
             >
               {m.highlight && (
                 <div
-                  className="absolute -top-3 left-1/2 -translate-x-1/2 text-xs font-bold px-4 py-1.5 rounded-full"
+                  className="absolute -top-3.5 left-1/2 -translate-x-1/2 text-xs font-bold px-4 py-1.5 rounded-full"
                   style={{
-                    background: `linear-gradient(135deg, ${m.color}, #14b8a6)`,
-                    color: "#070d1a",
+                    background: `linear-gradient(135deg, ${m.color}, #0d9488)`,
+                    color: "#ffffff",
                     whiteSpace: "nowrap",
+                    boxShadow: `0 4px 16px ${m.color}30`,
                   }}
                 >
                   Más popular
@@ -114,7 +131,12 @@ export default function Pricing() {
 
               {/* Icon + Name */}
               <div className="flex items-center gap-3">
-                <span className="text-3xl">{m.icon}</span>
+                <span
+                  className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                  style={{ background: `${m.color}10`, color: m.color }}
+                >
+                  {m.icon}
+                </span>
                 <div>
                   <h3
                     className="text-xl font-bold"
@@ -132,8 +154,8 @@ export default function Pricing() {
               <div
                 className="text-xs px-3 py-1.5 rounded-full self-start"
                 style={{
-                  background: `${m.color}12`,
-                  border: `1px solid ${m.color}25`,
+                  background: `${m.color}08`,
+                  border: `1px solid ${m.color}20`,
                   color: "var(--text-muted)",
                 }}
               >
@@ -141,7 +163,7 @@ export default function Pricing() {
                 {m.idealFor}
               </div>
 
-              <div style={{ borderTop: "1px solid rgba(20,184,166,0.1)" }} />
+              <div style={{ borderTop: "1px solid rgba(13,148,136,0.08)" }} />
 
               {/* Description */}
               <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
@@ -150,10 +172,10 @@ export default function Pricing() {
 
               {/* Benefit callout */}
               <div
-                className="p-3 rounded-lg text-sm"
+                className="p-3 rounded-xl text-sm"
                 style={{
-                  background: `${m.color}0A`,
-                  border: `1px solid ${m.color}20`,
+                  background: `${m.color}07`,
+                  border: `1px solid ${m.color}18`,
                 }}
               >
                 <span style={{ color: m.color, fontWeight: 600 }}>✓ </span>
@@ -179,7 +201,7 @@ export default function Pricing() {
                 className="btn-outline justify-center text-sm py-2.5"
                 style={{
                   color: m.color,
-                  borderColor: `${m.color}40`,
+                  borderColor: `${m.color}35`,
                 }}
               >
                 Empezar con este modelo →
@@ -191,7 +213,7 @@ export default function Pricing() {
         {/* Formula display */}
         <div
           className="glass-card p-8 text-center"
-          style={{ borderColor: "rgba(20, 184, 166, 0.2)" }}
+          style={{ borderColor: "rgba(13, 148, 136, 0.18)" }}
         >
           <div
             className="text-sm font-semibold uppercase tracking-widest mb-4"
