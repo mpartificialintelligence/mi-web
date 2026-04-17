@@ -6,44 +6,61 @@ const services = [
     name: "Genesis Engine",
     subtitle: "Desarrollo de MVPs",
     tag: "3× Aceleración",
-    tagColor: "#14b8a6",
+    tagColor: "#0d9488",
     uvp: "Entrega de prototipos funcionales en 48 horas y MVPs en 2 a 4 meses.",
     ai: "AI-First Discovery: Agentes de NLP detectan inconsistencias en requisitos. Spec-Driven Development: Generación de código basado en especificación validada.",
     pricing: "Outcome-Based: Precio fijo por hito funcional validado (ej. «Módulo de pagos funcional»).",
-    icon: "🚀",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+      </svg>
+    ),
     ideal: "Startups y empresas que quieren lanzar rápido",
   },
   {
     name: "Shift-Right",
     subtitle: "Modernización de Legados",
     tag: "80% Automatización",
-    tagColor: "#06b6d4",
+    tagColor: "#0891b2",
     uvp: "Eliminación Rápida de Deuda Técnica: Modernización de códigos obsoletos (COBOL, Java/.NET legacy).",
     ai: "Refactorización Agéntica: Agentes analizan y traducen lógica de negocio con 87% de precisión. Patrón «Estrangulador».",
     pricing: "Shared Savings (Value-Based): 15–30% de los ahorros operativos generados en mantenimiento.",
-    icon: "🔄",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="23,4 23,10 17,10"/><polyline points="1,20 1,14 7,14"/>
+        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+      </svg>
+    ),
     ideal: "Empresas con sistemas legados costosos de mantener",
   },
   {
     name: "Sentinel Ops",
     subtitle: "AI-SRE & Resiliencia",
     tag: "99.9% Uptime",
-    tagColor: "#34d399",
+    tagColor: "#059669",
     uvp: "Máxima Resiliencia: Garantía de continuidad mediante la reducción del MTTR hasta en un 90%. Uptime garantizado del 99.9%.",
     ai: "Remediación Autónoma: Ejecución de correcciones bajo guardrail (ej. rollback de despliegues). Investigación Paralela: Agentes identifican la causa raíz en segundos.",
     pricing: "Híbrido: Suscripción base + tarifa por incidente resuelto exitosamente.",
-    icon: "🛡️",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+    ),
     ideal: "Productos en producción con alta demanda de disponibilidad",
   },
   {
     name: "Veritas QA",
     subtitle: "Aseguramiento de Calidad 2.0",
     tag: "+80% Cobertura",
-    tagColor: "#a78bfa",
+    tagColor: "#7c3aed",
     uvp: "Calidad a la Izquierda: Cobertura de pruebas superior al 80% sin exposición de datos sensibles (GDPR/HIPAA).",
     ai: "Generación Agéntica de Pruebas: Creación automática de suites Playwright/Cypress. Datos Sintéticos: Pruebas masivas que cumplen normativas de privacidad.",
     pricing: "Outcome-Based: Tarifa por «Suite de Pruebas Verificada» o «Release Auditado».",
-    icon: "✅",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="9,11 12,14 22,4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+      </svg>
+    ),
     ideal: "Equipos que necesitan calidad regulatoria (GDPR/HIPAA)",
   },
 ];
@@ -51,12 +68,16 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-28 relative overflow-hidden">
+    <section
+      id="services"
+      className="py-28 relative overflow-hidden"
+      style={{ background: "var(--bg-primary)" }}
+    >
       <div
-        className="absolute inset-0 opacity-10"
+        className="absolute inset-0 opacity-60"
         style={{
           background:
-            "radial-gradient(ellipse at 20% 50%, #14b8a620, transparent 60%), radial-gradient(ellipse at 80% 50%, #06b6d420, transparent 60%)",
+            "radial-gradient(ellipse at 20% 50%, rgba(13,148,136,0.04), transparent 60%), radial-gradient(ellipse at 80% 50%, rgba(8,145,178,0.04), transparent 60%)",
         }}
       />
 
@@ -91,7 +112,12 @@ export default function Services() {
               {/* Header */}
               <div className="flex items-start justify-between gap-4">
                 <div className="flex items-center gap-3">
-                  <span className="text-3xl">{s.icon}</span>
+                  <span
+                    className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                    style={{ background: `${s.tagColor}10`, color: s.tagColor }}
+                  >
+                    {s.icon}
+                  </span>
                   <div>
                     <h3
                       className="font-bold text-xl"
@@ -110,9 +136,9 @@ export default function Services() {
                 <span
                   className="text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap"
                   style={{
-                    background: `${s.tagColor}18`,
+                    background: `${s.tagColor}10`,
                     color: s.tagColor,
-                    border: `1px solid ${s.tagColor}30`,
+                    border: `1px solid ${s.tagColor}25`,
                   }}
                 >
                   {s.tag}
@@ -120,7 +146,7 @@ export default function Services() {
               </div>
 
               {/* Divider */}
-              <div style={{ borderTop: "1px solid rgba(20,184,166,0.1)" }} />
+              <div style={{ borderTop: "1px solid rgba(13,148,136,0.08)" }} />
 
               {/* UVP */}
               <div>
@@ -137,10 +163,10 @@ export default function Services() {
 
               {/* AI Acceleration */}
               <div
-                className="p-4 rounded-lg text-sm"
+                className="p-4 rounded-xl text-sm"
                 style={{
-                  background: "rgba(20, 184, 166, 0.04)",
-                  border: "1px solid rgba(20, 184, 166, 0.08)",
+                  background: `${s.tagColor}06`,
+                  border: `1px solid ${s.tagColor}15`,
                 }}
               >
                 <div
@@ -173,8 +199,8 @@ export default function Services() {
               <div
                 className="text-xs px-3 py-2 rounded-lg"
                 style={{
-                  background: `${s.tagColor}08`,
-                  border: `1px solid ${s.tagColor}20`,
+                  background: `${s.tagColor}06`,
+                  border: `1px solid ${s.tagColor}15`,
                   color: "var(--text-muted)",
                 }}
               >
@@ -185,17 +211,19 @@ export default function Services() {
               {/* CTA */}
               <a
                 href="#contact"
-                className="flex items-center justify-center gap-2 text-sm font-semibold py-2.5 rounded-lg transition-all duration-200"
+                className="flex items-center justify-center gap-2 text-sm font-semibold py-2.5 rounded-lg transition-all duration-200 cursor-pointer"
                 style={{
                   color: s.tagColor,
-                  border: `1px solid ${s.tagColor}30`,
-                  background: `${s.tagColor}08`,
+                  border: `1.5px solid ${s.tagColor}30`,
+                  background: `${s.tagColor}06`,
                 }}
                 onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.background = `${s.tagColor}18`;
+                  (e.currentTarget as HTMLElement).style.background = `${s.tagColor}12`;
+                  (e.currentTarget as HTMLElement).style.borderColor = `${s.tagColor}60`;
                 }}
                 onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.background = `${s.tagColor}08`;
+                  (e.currentTarget as HTMLElement).style.background = `${s.tagColor}06`;
+                  (e.currentTarget as HTMLElement).style.borderColor = `${s.tagColor}30`;
                 }}
               >
                 Consultar este servicio
@@ -208,26 +236,26 @@ export default function Services() {
         </div>
 
         {/* Image banner */}
-        <div className="mt-20 relative rounded-2xl overflow-hidden" style={{ height: "300px" }}>
+        <div className="mt-20 relative rounded-2xl overflow-hidden" style={{ height: "300px", boxShadow: "0 8px 40px rgba(15,23,42,0.1)" }}>
           <Image
             src={img("/images/laptops.png")}
             alt="AI Engineering Stack"
             fill
             className="object-cover object-center"
-            style={{ filter: "brightness(0.25) contrast(1.1)" }}
+            style={{ filter: "brightness(0.55) contrast(1.05)" }}
           />
           <div
             className="absolute inset-0 flex flex-col justify-center items-center text-center px-6"
-            style={{ background: "rgba(7,13,26,0.5)" }}
+            style={{ background: "linear-gradient(135deg, rgba(13,148,136,0.6) 0%, rgba(8,145,178,0.4) 100%)" }}
           >
             <p
               className="text-2xl font-bold mb-3"
-              style={{ fontFamily: "var(--font-syne), sans-serif", color: "var(--text-primary)" }}
+              style={{ fontFamily: "var(--font-syne), sans-serif", color: "#ffffff" }}
             >
               90% del código generado por agentes.{" "}
-              <span className="gradient-text">100% supervisado por humanos.</span>
+              <span style={{ color: "#ccfbf1" }}>100% supervisado por humanos.</span>
             </p>
-            <p style={{ color: "var(--text-muted)" }}>
+            <p style={{ color: "rgba(255,255,255,0.8)" }}>
               Ingenieros senior enfocados en arquitectura, estrategia y seguridad.
             </p>
           </div>

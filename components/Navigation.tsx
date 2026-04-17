@@ -48,7 +48,7 @@ export default function Navigation() {
       {menuOpen && (
         <div
           className="fixed inset-0 z-40 lg:hidden"
-          style={{ background: "rgba(0,0,0,0.6)", backdropFilter: "blur(4px)" }}
+          style={{ background: "rgba(15, 23, 42, 0.4)", backdropFilter: "blur(4px)" }}
           onClick={() => setMenuOpen(false)}
         />
       )}
@@ -56,28 +56,57 @@ export default function Navigation() {
       <nav
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
         style={{
-          background: scrolled ? "rgba(7, 13, 26, 0.92)" : "transparent",
-          backdropFilter: scrolled ? "blur(20px)" : "none",
+          background: scrolled ? "rgba(255, 255, 255, 0.95)" : "rgba(255,255,255,0.6)",
+          backdropFilter: "blur(20px)",
           borderBottom: scrolled
-            ? "1px solid rgba(20, 184, 166, 0.1)"
+            ? "1px solid rgba(13, 148, 136, 0.1)"
             : "1px solid transparent",
+          boxShadow: scrolled ? "0 1px 20px rgba(15,23,42,0.06)" : "none",
         }}
       >
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-3 group">
+          <a href="#home" className="flex items-center gap-4 group cursor-pointer">
             <Image
               src={img("/logo.png")}
-              alt="Model and Processing Systems"
-              width={180}
-              height={52}
-              className="h-10 w-auto object-contain"
+              alt="Model and Processing Systems for Artificial Intelligence"
+              width={56}
+              height={56}
+              className="h-14 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
               priority
             />
+            <div className="flex flex-col gap-1">
+              <span
+                className="gradient-text"
+                style={{
+                  fontFamily: "var(--font-syne), sans-serif",
+                  fontWeight: 800,
+                  fontSize: "1.05rem",
+                  letterSpacing: "-0.03em",
+                  lineHeight: 1.15,
+                }}
+              >
+                Model and Processing Systems
+              </span>
+              <span
+                className="hidden sm:block"
+                style={{
+                  color: "var(--text-muted)",
+                  fontFamily: "var(--font-syne), sans-serif",
+                  fontWeight: 600,
+                  fontSize: "0.7rem",
+                  letterSpacing: "0.12em",
+                  textTransform: "uppercase",
+                  lineHeight: 1,
+                }}
+              >
+                for Artificial Intelligence
+              </span>
+            </div>
           </a>
 
           {/* Desktop links */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-8 pl-8 border-l" style={{ borderColor: "rgba(13,148,136,0.15)" }}>
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
               return (
@@ -119,7 +148,7 @@ export default function Navigation() {
 
           {/* Mobile menu button */}
           <button
-            className="lg:hidden flex flex-col gap-1.5 p-2 relative z-50"
+            className="lg:hidden flex flex-col gap-1.5 p-2 relative z-50 cursor-pointer"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
@@ -151,7 +180,7 @@ export default function Navigation() {
         {menuOpen && (
           <div
             className="lg:hidden px-6 pb-6 pt-2 flex flex-col gap-4 relative z-50"
-            style={{ background: "rgba(7, 13, 26, 0.98)" }}
+            style={{ background: "rgba(255, 255, 255, 0.98)", borderTop: "1px solid rgba(13,148,136,0.1)" }}
           >
             {navLinks.map((link) => (
               <a
@@ -160,7 +189,7 @@ export default function Navigation() {
                 className="text-base font-medium py-2 border-b transition-colors duration-200"
                 style={{
                   color: activeSection === link.id ? "var(--accent-teal)" : "var(--text-muted)",
-                  borderColor: "rgba(20, 184, 166, 0.1)",
+                  borderColor: "rgba(13, 148, 136, 0.1)",
                   fontFamily: "var(--font-dm-sans), sans-serif",
                 }}
                 onClick={() => setMenuOpen(false)}

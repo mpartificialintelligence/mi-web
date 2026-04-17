@@ -10,16 +10,16 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          teal: "#14b8a6",
-          cyan: "#06b6d4",
-          dark: "#070d1a",
-          navy: "#0d1528",
-          card: "#0f1e35",
+          teal: "#0d9488",
+          cyan: "#0891b2",
+          light: "#F8FAFC",
+          slate: "#F1F5F9",
+          card: "#ffffff",
         },
       },
       fontFamily: {
-        syne: ["Syne", "sans-serif"],
-        dm: ["DM Sans", "sans-serif"],
+        syne: ["Poppins", "sans-serif"],
+        dm: ["Poppins", "sans-serif"],
       },
       animation: {
         "gradient-shift": "gradientShift 8s ease infinite",
