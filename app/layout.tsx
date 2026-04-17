@@ -233,7 +233,7 @@ export default function RootLayout({
             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
             "font-src 'self' data: https://fonts.gstatic.com",
             "img-src 'self' data:",
-            "connect-src 'self' ws: wss:",
+            "connect-src 'self' ws: wss: https://api.web3forms.com",
             "base-uri 'self'",
             "form-action 'self' mailto:",
           ].join("; ")}

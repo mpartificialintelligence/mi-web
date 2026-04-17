@@ -5,19 +5,41 @@ import { useState } from "react";
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", company: "", message: "" });
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Contacto desde web — ${form.name}`);
-    const body = encodeURIComponent(
-      `Nombre: ${form.name}\nEmpresa: ${form.company}\nEmail: ${form.email}\n\nMensaje:\n${form.message}`
-    );
-    window.location.href = `mailto:ia-manager@mpartificialintelligence.com?subject=${subject}&body=${body}`;
-    setSent(true);
+    setLoading(true);
+    setError("");
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: "2e8f7e9d-029c-4b64-94dd-fa00757f1c32",
+          subject: `Contacto desde web — ${form.name}`,
+          from_name: form.name,
+          email: form.email,
+          company: form.company || "No especificada",
+          message: form.message,
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setSent(true);
+      } else {
+        setError("No se pudo enviar el mensaje. Intente nuevamente.");
+      }
+    } catch {
+      setError("Error de conexión. Intente nuevamente.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const inputStyle = {
@@ -300,12 +322,25 @@ export default function Contact() {
                     />
                   </div>
 
-                  <button type="submit" className="btn-primary justify-center py-4 text-base cursor-pointer">
-                    Enviar Mensaje
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                      <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="btn-primary justify-center py-4 text-base cursor-pointer"
+                    style={{ opacity: loading ? 0.7 : 1 }}
+                  >
+                    {loading ? "Enviando..." : "Enviar Mensaje"}
+                    {!loading && (
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                      </svg>
+                    )}
                   </button>
+
+                  {error && (
+                    <p className="text-xs text-center font-medium" style={{ color: "#dc2626" }}>
+                      {error}
+                    </p>
+                  )}
 
                   <p className="text-xs text-center" style={{ color: "var(--text-muted)" }}>
                     Sus datos son confidenciales y no se compartirán con terceros.
