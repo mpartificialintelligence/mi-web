@@ -23,26 +23,55 @@ export default function Footer() {
       className="relative pt-20 pb-10 overflow-hidden"
       style={{
         background: "var(--bg-secondary)",
-        borderTop: "1px solid rgba(20, 184, 166, 0.1)",
+        borderTop: "1px solid rgba(13, 148, 136, 0.1)",
       }}
     >
-      {/* Orb */}
+      {/* Soft orb */}
       <div
-        className="orb absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-32 opacity-10"
-        style={{ background: "radial-gradient(ellipse, #14b8a6, transparent 70%)" }}
+        className="orb absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-32 opacity-20"
+        style={{ background: "radial-gradient(ellipse, rgba(13,148,136,0.15), transparent 70%)" }}
       />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div className="md:col-span-2">
-            <Image
-              src={img("/logo.png")}
-              alt="Model and Processing Systems"
-              width={200}
-              height={60}
-              className="h-12 w-auto object-contain mb-5"
-            />
+            <div className="flex items-center gap-4 mb-5">
+              <Image
+                src={img("/logo.png")}
+                alt="Model and Processing Systems for Artificial Intelligence"
+                width={64}
+                height={64}
+                className="h-16 w-auto object-contain"
+              />
+              <div className="flex flex-col gap-1">
+                <span
+                  className="gradient-text"
+                  style={{
+                    fontFamily: "var(--font-syne), sans-serif",
+                    fontWeight: 800,
+                    fontSize: "1.1rem",
+                    letterSpacing: "-0.03em",
+                    lineHeight: 1.15,
+                  }}
+                >
+                  Model and Processing Systems
+                </span>
+                <span
+                  style={{
+                    color: "var(--text-muted)",
+                    fontFamily: "var(--font-syne), sans-serif",
+                    fontWeight: 600,
+                    fontSize: "0.7rem",
+                    letterSpacing: "0.12em",
+                    textTransform: "uppercase",
+                    lineHeight: 1,
+                  }}
+                >
+                  for Artificial Intelligence
+                </span>
+              </div>
+            </div>
             <p
               className="text-sm leading-relaxed mb-6 max-w-sm"
               style={{ color: "var(--text-muted)" }}
@@ -52,15 +81,21 @@ export default function Footer() {
             </p>
             <div className="flex flex-col gap-2 text-sm" style={{ color: "var(--text-muted)" }}>
               <div className="flex items-center gap-2">
-                <span style={{ color: "var(--accent-teal)" }}>▸</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: "var(--accent-teal)", flexShrink: 0 }}>
+                  <polyline points="20,6 9,17 4,12"/>
+                </svg>
                 <span>3× más rápido al mercado</span>
               </div>
               <div className="flex items-center gap-2">
-                <span style={{ color: "var(--accent-teal)" }}>▸</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: "var(--accent-teal)", flexShrink: 0 }}>
+                  <polyline points="20,6 9,17 4,12"/>
+                </svg>
                 <span>Time-to-Market: de 12 a 4 meses</span>
               </div>
               <div className="flex items-center gap-2">
-                <span style={{ color: "var(--accent-teal)" }}>▸</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: "var(--accent-teal)", flexShrink: 0 }}>
+                  <polyline points="20,6 9,17 4,12"/>
+                </svg>
                 <span>90% reducción en MTTR</span>
               </div>
             </div>
@@ -128,7 +163,7 @@ export default function Footer() {
         {/* CTA strip */}
         <div
           className="glass-card p-6 flex flex-col sm:flex-row items-center justify-between gap-4 mb-12"
-          style={{ borderColor: "rgba(20, 184, 166, 0.2)" }}
+          style={{ borderColor: "rgba(13, 148, 136, 0.18)" }}
         >
           <div>
             <div
@@ -152,7 +187,7 @@ export default function Footer() {
         {/* Bottom */}
         <div
           className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6"
-          style={{ borderTop: "1px solid rgba(20, 184, 166, 0.08)" }}
+          style={{ borderTop: "1px solid rgba(13, 148, 136, 0.08)" }}
         >
           <p className="text-xs" style={{ color: "var(--text-muted)" }}>
             © {new Date().getFullYear()} Model and Processing Systems for Artificial Intelligence.

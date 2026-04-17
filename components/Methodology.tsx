@@ -6,7 +6,7 @@ const apexPhases = [
     process:
       "Descubrimiento IA-First (NLP): Agentes analizan requisitos y generan el blueprint técnico, identificando contradicciones lógicas.",
     outcome: "Reducción de riesgos iniciales y minimización de retrabajo.",
-    color: "#14b8a6",
+    color: "#0d9488",
   },
   {
     code: "P",
@@ -15,7 +15,7 @@ const apexPhases = [
     process:
       "Generación de prototipos funcionales (código real) para validar rápidamente UX y lógica de negocio fundamental.",
     outcome: "Validación rápida de hipótesis de mercado.",
-    color: "#06b6d4",
+    color: "#0891b2",
   },
   {
     code: "E",
@@ -24,7 +24,7 @@ const apexPhases = [
     process:
       "Desarrollo Agéntico Paralelo: Orquestación de equipos de agentes (Dev, QA, DevOps) trabajando simultáneamente sobre micro-tareas.",
     outcome: "Aceleración del desarrollo 3× con Integración Continua rápida.",
-    color: "#34d399",
+    color: "#059669",
   },
   {
     code: "X",
@@ -33,7 +33,7 @@ const apexPhases = [
     process:
       "Transición a Sentinel Ops (AI-SRE) para gestión de infraestructura autónoma, monitoreo predictivo y remediación.",
     outcome: "Código mantenible y máxima resiliencia operativa.",
-    color: "#a78bfa",
+    color: "#7c3aed",
   },
 ];
 
@@ -42,39 +42,64 @@ const guarantees = [
     title: "Propiedad Intelectual (IP)",
     standard: "El cliente mantiene el 100% de la IP del código final.",
     sla: "Auditoría Human-in-the-loop obligatoria antes de cada integración mayor.",
-    icon: "🔐",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+      </svg>
+    ),
+    color: "#0d9488",
   },
   {
     title: "Calidad de Código",
     standard: "Uso del Spec-Driven Development (SDD) para vincular código a la especificación técnica original.",
     sla: "Groundedness Score > 0.9: El código es fiel a los requisitos documentados.",
-    icon: "📋",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10,9 9,9 8,9"/>
+      </svg>
+    ),
+    color: "#0891b2",
   },
   {
     title: "Resiliencia Operativa",
     standard: "Failover Multi-proveedor (OpenAI + Anthropic) para evitar caídas de la API.",
     sla: "Uptime: 99.9% · Latencia p95: <1.5s en interfaces inteligentes.",
-    icon: "⚡",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/>
+      </svg>
+    ),
+    color: "#059669",
   },
   {
     title: "Transparencia",
     standard: '«Cerebro del Cliente»: repositorio de conocimiento contextual centraliza decisiones arquitectónicas.',
     sla: "Tasa de Alucinación: <5% en entregas documentales.",
-    icon: "👁️",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+      </svg>
+    ),
+    color: "#7c3aed",
   },
 ];
 
 export default function Methodology() {
   return (
-    <section id="methodology" className="py-28 relative overflow-hidden">
-      {/* Background */}
-      <div
-        className="absolute inset-0 grid-bg opacity-40"
-        style={{ background: "var(--bg-secondary)" }}
-      />
+    <section
+      id="methodology"
+      className="py-28 relative overflow-hidden"
+      style={{ background: "var(--bg-secondary)" }}
+    >
+      {/* Subtle grid */}
+      <div className="absolute inset-0 grid-bg opacity-60" />
       <div
         className="absolute top-0 left-0 right-0 h-px"
-        style={{ background: "linear-gradient(to right, transparent, rgba(20,184,166,0.3), transparent)" }}
+        style={{ background: "linear-gradient(to right, transparent, rgba(13,148,136,0.2), transparent)" }}
+      />
+      <div
+        className="absolute bottom-0 left-0 right-0 h-px"
+        style={{ background: "linear-gradient(to right, transparent, rgba(13,148,136,0.2), transparent)" }}
       />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -104,14 +129,14 @@ export default function Methodology() {
           {/* Connector line */}
           <div
             className="absolute top-16 left-0 right-0 h-px hidden lg:block"
-            style={{ background: "linear-gradient(to right, #14b8a6, #06b6d4, #34d399, #a78bfa)" }}
+            style={{ background: "linear-gradient(to right, #0d9488, #0891b2, #059669, #7c3aed)", opacity: 0.4 }}
           />
 
           {apexPhases.map((phase, idx) => (
             <div key={phase.code} className="relative flex flex-col">
               {/* Phase card */}
               <div
-                className="glass-card m-3 p-6 flex flex-col gap-4 h-full"
+                className="glass-card glass-card-hover m-3 p-6 flex flex-col gap-4 h-full cursor-pointer"
                 style={{ borderColor: `${phase.color}20` }}
               >
                 {/* Letter badge */}
@@ -119,8 +144,8 @@ export default function Methodology() {
                   <div
                     className="w-14 h-14 rounded-xl flex items-center justify-center text-2xl font-black mx-auto lg:mx-0 mb-4"
                     style={{
-                      background: `${phase.color}15`,
-                      border: `2px solid ${phase.color}40`,
+                      background: `${phase.color}10`,
+                      border: `2px solid ${phase.color}30`,
                       fontFamily: "var(--font-syne), sans-serif",
                       color: phase.color,
                     }}
@@ -149,7 +174,7 @@ export default function Methodology() {
                   <div
                     className="p-3 rounded-lg text-sm"
                     style={{
-                      background: `${phase.color}08`,
+                      background: `${phase.color}06`,
                       border: `1px solid ${phase.color}15`,
                     }}
                   >
@@ -191,7 +216,7 @@ export default function Methodology() {
             <div
               className="h-px flex-1"
               style={{
-                background: "linear-gradient(to right, rgba(20,184,166,0.3), transparent)",
+                background: "linear-gradient(to right, rgba(13,148,136,0.25), transparent)",
               }}
             />
           </div>
@@ -200,9 +225,9 @@ export default function Methodology() {
             {guarantees.map((g) => (
               <div
                 key={g.title}
-                className="glass-card glass-card-hover p-6 flex gap-5"
+                className="glass-card glass-card-hover p-6 flex gap-5 cursor-pointer"
               >
-                <div className="text-3xl flex-shrink-0">{g.icon}</div>
+                <div className="flex-shrink-0 mt-0.5" style={{ color: g.color }}>{g.icon}</div>
                 <div>
                   <h4
                     className="font-bold mb-2"
@@ -216,9 +241,9 @@ export default function Methodology() {
                   <div
                     className="text-sm font-medium px-3 py-1.5 rounded-lg inline-block"
                     style={{
-                      background: "rgba(20, 184, 166, 0.08)",
-                      color: "var(--accent-teal)",
-                      border: "1px solid rgba(20, 184, 166, 0.15)",
+                      background: `${g.color}08`,
+                      color: g.color,
+                      border: `1px solid ${g.color}20`,
                     }}
                   >
                     SLA: {g.sla}

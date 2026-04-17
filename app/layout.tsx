@@ -1,19 +1,12 @@
 import type { Metadata } from "next";
-import { Syne, DM_Sans } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 
-const syne = Syne({
+const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-syne",
-  display: "swap",
-});
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["300", "400", "500", "600", "700", "800"],
   style: ["normal", "italic"],
-  variable: "--font-dm-sans",
+  variable: "--font-poppins",
   display: "swap",
 });
 
@@ -224,7 +217,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${syne.variable} ${dmSans.variable}`}>
+    <html lang="es" className={`${poppins.variable}`}>
       <head>
         {/* JSON-LD Structured Data */}
         <script
@@ -236,11 +229,11 @@ export default function RootLayout({
           httpEquiv="Content-Security-Policy"
           content={[
             "default-src 'self'",
-            "script-src 'self' 'unsafe-inline'",
-            "style-src 'self' 'unsafe-inline'",
-            "font-src 'self' data:",
+            "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+            "font-src 'self' data: https://fonts.gstatic.com",
             "img-src 'self' data:",
-            "connect-src 'self'",
+            "connect-src 'self' ws: wss:",
             "base-uri 'self'",
             "form-action 'self' mailto:",
           ].join("; ")}
